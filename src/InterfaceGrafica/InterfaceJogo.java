@@ -70,12 +70,12 @@ public class InterfaceJogo {
 			break;
 		}
 		if(button.getBackground().equals(Color.BLUE)) {
-			button.setBackground(Color.BLACK);
+			button.setBackground(Color.WHITE);
 			button.setIcon(new ImageIcon(InterfaceJogo.class.getResource("")));
 			primeiraAcao = false;
 			pecaAzul = true;
 		} else if (button.getBackground().equals(Color.YELLOW)) {
-			button.setBackground(Color.BLACK);
+			button.setBackground(Color.WHITE);
 			button.setIcon(new ImageIcon(InterfaceJogo.class.getResource("")));
 			primeiraAcao = false;
 			pecaAzul = false;
@@ -111,7 +111,7 @@ public class InterfaceJogo {
 		atorJogador = new AtorJogador();
 		
 		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.BLACK);
+		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 800, 541);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
