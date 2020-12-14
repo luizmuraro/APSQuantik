@@ -17,18 +17,18 @@ public class Posicao {
 		this.ocupante = ocupante;
 	}
 
-	public void definirOcupante(Jogador jogador) {
+	public void definirOcupante(Peca jogador) {
 		
 	}
 	
-	public boolean informarOcupado() {
+	public boolean informarOcupada() {
 		return false;
 	}
-	public Jogador informarOcupante() {
+	public Peca informarOcupante() {
 		return null;
 		
 	}
-	public boolean ocupadoPor(Jogador jogador) {
+	public boolean ocupadoPor(Peca jogador) {
 		return false;
 		
 	}

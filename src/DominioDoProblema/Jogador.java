@@ -3,8 +3,8 @@ package DominioDoProblema;
 public class Jogador {
 	protected String nome;
 	protected int cor;
-	protected boolean seuTurno;
-	protected boolean vencedor;
+	protected boolean seuTurno = false;
+	protected boolean vencedor = false;
 	
 	public Jogador(String nome, int cor, boolean seuTurno, boolean vencedor) {
 		super();
@@ -51,11 +51,15 @@ public class Jogador {
 	}
 	
 	public void inverterTurno() {
-		
+		if (seuTurno) {
+			seuTurno = false;
+		} else {
+			seuTurno = true;
+		}
 	}
 	
 	public boolean informarVencedor() {
-		return seuTurno;
+		return vencedor;
 		
 	}
 	public int informarCor() {
@@ -63,13 +67,16 @@ public class Jogador {
 		
 	}
 	public void iniciar() {
-		
+		cor = 2;
+		seuTurno = false;
+		vencedor = false;
 	}
 	public void definirComoPrimeiro() {
-		
+		cor = 1;
+		seuTurno = true;
 	}
 	public void definirVencedor(boolean vencedor) {
-		
+		this.vencedor = vencedor;
 	}
 
 }

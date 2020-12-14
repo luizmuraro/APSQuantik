@@ -1,15 +1,13 @@
 package DominioDoProblema;
 
 public class EstadoQuantik {
-	protected String mensagem;
+	protected String mensagem = "Jogo Pentago - aguardando iniciar partida";
 	protected Lance lance;
-	protected int[][] valoresTabuleiro;
-	
-	public EstadoQuantik(String mensagem, Lance lance, int[][] valoresTabuleiro) {
+	protected int[][] valoresTabuleiro = new int[6][6];
+
+	public EstadoQuantik(Lance lance) {
 		super();
-		this.mensagem = mensagem;
 		this.lance = lance;
-		this.valoresTabuleiro = valoresTabuleiro;
 	}
 
 	public String getMensagem() {
@@ -35,15 +33,17 @@ public class EstadoQuantik {
 	public void setValoresTabuleiro(int[][] valoresTabuleiro) {
 		this.valoresTabuleiro = valoresTabuleiro;
 	}
-	
+
 	public String informarMensagem() {
 		return mensagem;
-		}
+	}
+
 	public Lance informarLance() {
 		return lance;
-		}
-	public void assumirValorTabuleiro(int linha, int coluna, int valor) {
-		
 	}
-	
+
+	public void assumirValorTabuleiro(int linha, int coluna, Peca peca) {
+
+	}
+
 }
