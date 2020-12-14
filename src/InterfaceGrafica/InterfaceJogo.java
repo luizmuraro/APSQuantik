@@ -69,28 +69,26 @@ public class InterfaceJogo {
 			naipe = new ImageIcon(InterfaceJogo.class.getResource("/resources/Naipe_ouros64.png"));
 			break;
 		}
+		
 		if(button.getBackground().equals(Color.BLUE)) {
-			button.setBackground(Color.WHITE);
-			button.setIcon(new ImageIcon(InterfaceJogo.class.getResource("")));
-			primeiraAcao = false;
 			pecaAzul = true;
 		} else if (button.getBackground().equals(Color.YELLOW)) {
-			button.setBackground(Color.WHITE);
-			button.setIcon(new ImageIcon(InterfaceJogo.class.getResource("")));
-			primeiraAcao = false;
 			pecaAzul = false;
-		}		
+		}	
+		button.setBackground(Color.WHITE);
+		button.setIcon(new ImageIcon(InterfaceJogo.class.getResource("")));
+		primeiraAcao = false;
+	
 	} 
 	public void colocaPeca(JButton button) {
+		
 		if(button.getBackground().equals(posicaoVazia)) {
+			button.setIcon(naipe);
+			primeiraAcao = true;
 			if(pecaAzul) {
 				button.setBackground(Color.BLUE);
-				button.setIcon(naipe);
-				primeiraAcao = true;
 			} else {
 				button.setBackground(Color.YELLOW);
-				button.setIcon(naipe);
-				primeiraAcao = true;
 			}
 		} else {
 			JOptionPane.showMessageDialog(null, "Casa ocupada");
@@ -98,7 +96,7 @@ public class InterfaceJogo {
 	} 
 	
 	/**
-	 * Create the application.
+	 * Create the application.-
 	 */
 	public InterfaceJogo() {
 		initialize();

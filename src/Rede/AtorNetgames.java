@@ -97,6 +97,4 @@ public class AtorNetgames implements OuvidorProxy {
 		// TODO Auto-generated method stub
 		
 	}
-	
-
 }
