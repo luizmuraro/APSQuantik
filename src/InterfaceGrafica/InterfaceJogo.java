@@ -17,6 +17,7 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 
+import DominioDoProblema.Lance;
 import DominioDoProblema.Peca;
 import Rede.AtorNetgames;
 
