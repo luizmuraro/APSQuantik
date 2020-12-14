@@ -17,8 +17,13 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 
-public class InterfaceJogo {
+import DominioDoProblema.Peca;
+import Rede.AtorNetgames;
 
+public class InterfaceJogo {
+	
+	
+	protected AtorNetgames ngames;
 	private JFrame frame;
 	private final Action action = new SwingAction();
 	private final Action action_1 = new SwingAction_1();
@@ -87,6 +92,9 @@ public class InterfaceJogo {
 			primeiraAcao = true;
 			if(pecaAzul) {
 				button.setBackground(Color.BLUE);
+				Peca peca = new Peca("Ouros", true);
+				Lance lance = new Lance(1, 2,peca);
+				ngames.enviarJogada(lance);
 			} else {
 				button.setBackground(Color.YELLOW);
 			}

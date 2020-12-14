@@ -2,23 +2,32 @@ package Rede;
 
 import javax.swing.JOptionPane;
 
+import DominioDoProblema.Lance;
+import InterfaceGrafica.AtorJogador;
 import br.ufsc.inf.leobr.cliente.Jogada;
 import br.ufsc.inf.leobr.cliente.OuvidorProxy;
 import br.ufsc.inf.leobr.cliente.Proxy;
 import br.ufsc.inf.leobr.cliente.exception.ArquivoMultiplayerException;
 import br.ufsc.inf.leobr.cliente.exception.JahConectadoException;
 import br.ufsc.inf.leobr.cliente.exception.NaoConectadoException;
+import br.ufsc.inf.leobr.cliente.exception.NaoJogandoException;
 import br.ufsc.inf.leobr.cliente.exception.NaoPossivelConectarException;
 
 public class AtorNetgames implements OuvidorProxy {
 	
 	private static final long serialVersionUID = 1L;
 	protected Proxy proxy;
+	protected AtorJogador atorJogador;
+
 	
 	public AtorNetgames() {
 		super();
 		this.proxy = Proxy.getInstance();
 		proxy.addOuvinte(this);	
+	}
+	
+	public void definirInterfaceJogador(AtorJogador ator) {
+		atorJogador = ator;
 	}
 	
 	public String conectar(String servidor, String nome) {
@@ -81,12 +90,6 @@ public class AtorNetgames implements OuvidorProxy {
 	}
 
 	@Override
-	public void receberJogada(Jogada jogada) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void tratarConexaoPerdida() {
 		// TODO Auto-generated method stub
 		
@@ -97,4 +100,19 @@ public class AtorNetgames implements OuvidorProxy {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public void receberJogada(Jogada jogada) {
+		atorJogador.receberJogada((Lance) jogada);
+	}
+	
+	public void enviarJogada(Lance lance) {
+		try {
+			proxy.enviaJogada(lance);
+		} catch (NaoJogandoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
+

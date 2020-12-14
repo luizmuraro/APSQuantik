@@ -1,12 +1,17 @@
 package InterfaceGrafica;
 
 import DominioDoProblema.ElementoDominioProblema;
+import DominioDoProblema.Lance;
+import DominioDoProblema.Tabuleiro;
 import Rede.AtorNetgames;
+import br.ufsc.inf.leobr.cliente.Jogada;
 
 public class AtorJogador {
 	
 	protected AtorNetgames ngServer;
 	protected ElementoDominioProblema domProblema;
+	protected Tabuleiro tabuleiro;
+	protected InterfaceJogo gui;
 
 	public AtorJogador() {
 		ngServer = new AtorNetgames();
@@ -46,4 +51,13 @@ public class AtorJogador {
 		return mensagem;
 	}
 
+	public void receberJogada(Lance lance) {
+		tabuleiro.receberJogada(lance);
+		System.out.println("ronaldo");
+		System.out.println(lance.getLinha());
+		System.out.println("ronaldo");
+
+	}
+
+	
 }
